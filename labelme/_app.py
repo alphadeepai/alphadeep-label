@@ -395,15 +395,15 @@ class MainWindow(QtWidgets.QMainWindow):
 <h3>{__appname__}</h3>
 <p>Image Polygonal Annotation with Python</p>
 <p>Version: {__version__}</p>
-<p>Author: Kentaro Wada</p>
+<p>Maintained by AlphaDeep Inc.</p>
+<p>Forked from Labelme by Kentaro Wada</p>
 <p>
-    <a href="https://labelme.io">Homepage</a> |
-    <a href="https://labelme.io/docs">Documentation</a> |
-    <a href="https://labelme.io/docs/troubleshoot">Troubleshooting</a>
+    <a href="https://alphadeep.ai">Homepage</a> |
+    <a href="https://github.com/alphadeepai/alphadeep-label">GitHub</a>
 </p>
-<p>
+<p>Original Labelme Project:
     <a href="https://github.com/wkentaro/labelme">GitHub</a> |
-    <a href="https://x.com/labelmeai">Twitter/X</a>
+    <a href="https://labelme.io">Homepage</a>
 </p>
 """,
             ),

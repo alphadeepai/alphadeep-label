@@ -31,7 +31,7 @@ def test_help_uses_console_script_name(
         main()
 
     assert exc.value.code == 0
-    assert capsys.readouterr().out.startswith("usage: labelme ")
+    assert capsys.readouterr().out.startswith("usage: alphadeep-label ")
 
 
 @pytest.mark.parametrize("flag", ["--nodata", "--autosave"])
@@ -291,9 +291,9 @@ def test_setup_loguru_degrades_to_stderr_when_the_log_file_cannot_be_opened(
     tmp_path: Path,
     capsys: pytest.CaptureFixture[str],
 ) -> None:
-    cache_dir = tmp_path / ".cache" / "labelme"
+    cache_dir = tmp_path / ".cache" / "alphadeep-label"
     cache_dir.mkdir(parents=True)
-    (cache_dir / "labelme.log").mkdir()
+    (cache_dir / "alphadeep-label.log").mkdir()
 
     def expand_to_tmp_cache_dir(_self: Path) -> Path:
         return cache_dir
@@ -307,7 +307,7 @@ def test_setup_loguru_degrades_to_stderr_when_the_log_file_cannot_be_opened(
 
     err = capsys.readouterr().err
     assert "Failed to set up the log file" in err
-    assert repr(str(cache_dir / "labelme.log")) in err
+    assert repr(str(cache_dir / "alphadeep-label.log")) in err
 
 
 @pytest.mark.usefixtures("remove_loguru_sinks")

@@ -1,25 +1,21 @@
 <h1 align="center">
-  <img src="labelme/icons/icon-256.png" width="200" height="200"><br/>labelme
+  <img src="labelme/icons/icon-256.png" width="200" height="200"><br/>alphadeep-label
 </h1>
 
 <h4 align="center">
-  Image annotation with Python.
+  AlphaDeep Label - Image annotation with Python.
 </h4>
 
 <div align="center">
-  <a href="https://pypi.python.org/pypi/labelme"><img src="https://img.shields.io/pypi/v/labelme.svg"></a>
-  <!-- <a href="https://pypi.org/project/labelme"><img src="https://img.shields.io/pypi/pyversions/labelme.svg"></a> -->
-  <a href="https://github.com/wkentaro/labelme/actions"><img src="https://github.com/wkentaro/labelme/actions/workflows/test.yml/badge.svg?branch=main&event=push"></a>
-  <a href="https://discord.com/invite/uAjxGcJm83"><img src="https://dcbadge.limes.pink/api/server/uAjxGcJm83?style=flat"></a>
+  <a href="https://pypi.org/project/alphadeep-label"><img src="https://img.shields.io/pypi/v/alphadeep-label.svg"></a>
+  <a href="https://github.com/alphadeepai/alphadeep-label/actions"><img src="https://github.com/alphadeepai/alphadeep-label/actions/workflows/test.yml/badge.svg?branch=main&event=push"></a>
 </div>
 
 <div align="center">
   <a href="#installation"><b>Installation</b></a>
   | <a href="#usage"><b>Usage</b></a>
   | <a href="#examples"><b>Examples</b></a>
-  | <a href="https://labelme.io"><b>labelme.io ↗</b></a>
-  <!-- | <a href="https://github.com/wkentaro/labelme/discussions"><b>Community</b></a> -->
-  <!-- | <a href="https://www.youtube.com/playlist?list=PLI6LvFw0iflh3o33YYnVIfOpaO0hc5Dzw"><b>Youtube FAQ</b></a> -->
+  | <a href="https://alphadeep.ai"><b>alphadeep.ai ↗</b></a>
 </div>
 
 <br/>
@@ -30,10 +26,9 @@
 
 ## Description
 
-Labelme is a graphical image annotation tool inspired by <http://labelme.csail.mit.edu>.\
+AlphaDeep Label is a graphical image annotation tool for polygonal annotation, bounding boxes, and AI-assisted segmentation.
+It is a redistribution and fork of [Labelme](https://github.com/wkentaro/labelme) by Kentaro Wada (originally inspired by <http://labelme.csail.mit.edu>).\
 It is written in Python and uses Qt for its graphical interface.
-
-> Looking for a simple install without Python or Qt? Get the standalone app at **[labelme.io](https://labelme.io)**.
 
 <img src="examples/instance_segmentation/data_dataset_voc/JPEGImages/2011_000006.jpg" width="19%" /> <img src="examples/instance_segmentation/data_dataset_voc/SegmentationClass/2011_000006.png" width="19%" /> <img src="examples/instance_segmentation/data_dataset_voc/SegmentationClassVisualization/2011_000006.jpg" width="19%" /> <img src="examples/instance_segmentation/data_dataset_voc/SegmentationObject/2011_000006.png" width="19%" /> <img src="examples/instance_segmentation/data_dataset_voc/SegmentationObjectVisualization/2011_000006.jpg" width="19%" />\
 <i>VOC dataset example of instance segmentation.</i>
@@ -62,17 +57,13 @@ It is written in Python and uses Qt for its graphical interface.
 
 ## Installation
 
-There are 3 options to install labelme:
-
-### Option 1: Using pip
-
-For more detail, check ["Install Labelme using Terminal"](https://www.labelme.io/docs/install-labelme-terminal)
+### Using pip
 
 ```bash
-pip install labelme
+pip install alphadeep-label
 
 # To install the latest version from GitHub:
-# pip install git+https://github.com/wkentaro/labelme.git
+# pip install git+https://github.com/alphadeepai/alphadeep-label.git
 ```
 
 ### Option 2: Using standalone executable (Easiest)
@@ -139,29 +130,29 @@ Everything else, including the Python import surface, is internal and may change
 
 ## Usage
 
-Run `labelme --help` for detail.\
+Run `alphadeep-label --help` for detail.\
 The annotations are saved as a [JSON](http://www.json.org/) file.
 
 ```bash
-labelme  # just open gui
+alphadeep-label  # just open gui (also available as `labelme`)
 
 # tutorial (single image example)
 cd examples/tutorial
-labelme apc2016_obj3.jpg  # specify image file
-labelme apc2016_obj3.jpg --output annotations/  # save annotation JSON files to a directory
-labelme apc2016_obj3.jpg --with-image-data  # include image data in JSON file
-labelme apc2016_obj3.jpg \
+alphadeep-label apc2016_obj3.jpg  # specify image file
+alphadeep-label apc2016_obj3.jpg --output annotations/  # save annotation JSON files to a directory
+alphadeep-label apc2016_obj3.jpg --with-image-data  # include image data in JSON file
+alphadeep-label apc2016_obj3.jpg \
   --labels highland_6539_self_stick_notes,mead_index_cards,kong_air_dog_squeakair_tennis_ball  # specify label list
 
 # semantic segmentation example
 cd examples/semantic_segmentation
-labelme data_annotated/  # Open directory to annotate all images in it
-labelme data_annotated/ --labels labels.txt  # specify label list with a file
+alphadeep-label data_annotated/  # Open directory to annotate all images in it
+alphadeep-label data_annotated/ --labels labels.txt  # specify label list with a file
 ```
 
 ### Command Line Arguments
 
-Run `labelme --help` for the full list.
+Run `alphadeep-label --help` for the full list.
 
 ### FAQ
 
@@ -184,7 +175,7 @@ Run `labelme --help` for the full list.
 LABELME_PATH=./labelme
 OSAM_PATH=$(python -c 'import os, osam; print(os.path.dirname(osam.__file__))')
 pyinstaller labelme/labelme/__main__.py \
-  --name=Labelme \
+  --name=alphadeep-label \
   --windowed \
   --noconfirm \
   --specpath=build \
@@ -207,4 +198,4 @@ Run `just` to list commands and their arguments. Common commands are
 
 ## Acknowledgement
 
-This repo is the fork of [mpitid/pylabelme](https://github.com/mpitid/pylabelme).
+This repository is a fork and redistribution of [Labelme](https://github.com/wkentaro/labelme) by Kentaro Wada (which in turn was a fork of [mpitid/pylabelme](https://github.com/mpitid/pylabelme)).

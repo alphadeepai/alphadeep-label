@@ -62,13 +62,13 @@ def _setup_loguru(*, logger_level: str) -> None:
     # logging functional.
     try:
         if os.name == "nt":
-            cache_dir = Path(os.environ["LOCALAPPDATA"]) / "labelme"
+            cache_dir = Path(os.environ["LOCALAPPDATA"]) / "alphadeep-label"
         else:
-            cache_dir = Path("~/.cache/labelme").expanduser()
+            cache_dir = Path("~/.cache/alphadeep-label").expanduser()
 
         cache_dir.mkdir(parents=True, exist_ok=True)
 
-        log_file = cache_dir / "labelme.log"
+        log_file = cache_dir / "alphadeep-label.log"
         logger.add(
             log_file,
             colorize=True,
@@ -222,7 +222,7 @@ def _resolve_config_source(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(prog="labelme")
+    parser = argparse.ArgumentParser(prog="alphadeep-label")
     parser.add_argument("--version", "-V", action="store_true", help="show version")
     parser.add_argument(
         "--reset-config",

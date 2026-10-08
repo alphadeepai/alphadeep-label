@@ -8,6 +8,7 @@ import pytest
 from PySide6.QtCore import Qt
 from pytestqt.qtbot import QtBot
 
+from labelme import __appname__
 from labelme._app import MainWindow
 from labelme._label_file import read_label_file
 
@@ -81,7 +82,7 @@ def test_close_file(
 
     assert not annotated_win._canvas_widgets.canvas.isEnabled()
     assert annotated_win._annotation is None
-    assert annotated_win.windowTitle() == "Labelme"
+    assert annotated_win.windowTitle() == __appname__
 
     close_or_pause(qtbot=qtbot, widget=annotated_win, pause=pause)
 
